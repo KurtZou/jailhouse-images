@@ -46,6 +46,13 @@ config KAS_TARGET_ORANGEPI_ZERO
 	depends on TARGET_ORANGEPI_ZERO
 	default "mc:orangepi-zero-jailhouse-demo:demo-image"
 
+config TARGET_DRAGONRESOURCE_T3
+	bool "DragonResource T3 dev board"
+
+config KAS_TARGET_DRAGONRESOURCE_T3
+	string
+	depends on TARGET_DRAGONRESOURCE_T3
+	default "mc:dragonresource-t3-jailhouse-demo:demo-image"
 
 config TARGET_NUC6CAY
 	bool "Intel NUC (NUC6CAY, 8 GB RAM)"
