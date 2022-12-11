@@ -1,0 +1,38 @@
+From e97f2b4b82fdb08d4fa3568d3640b8c3376830eb Mon Sep 17 00:00:00 2001
+From: kurtz <kurtzou@gmail.com>
+Date: Sat, 10 Dec 2022 21:52:32 -0500
+Subject: [PATCH] adding d -t3 defconfig
+
+---
+ configs/dragonresource-t3_defconfig | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+ create mode 100644 configs/dragonresource-t3_defconfig
+
+diff --git a/configs/dragonresource-t3_defconfig b/configs/dragonresource-t3_defconfig
+new file mode 100644
+index 0000000000..ad996c81c6
+--- /dev/null
++++ b/configs/dragonresource-t3_defconfig
+@@ -0,0 +1,19 @@
++CONFIG_ARM=y
++CONFIG_ARCH_SUNXI=y
++CONFIG_SPL=y
++CONFIG_MACH_SUN8I_R40=y
++CONFIG_DRAM_CLK=576
++#CONFIG_MMC0_CD_PIN="PH13"
++CONFIG_USB1_VBUS_PIN="PH23"
++CONFIG_DEFAULT_DEVICE_TREE="sun8i-v40-bananapi-m2-berry"
++CONFIG_AHCI=y
++# CONFIG_SYS_MALLOC_CLEAR_ON_INIT is not set
++CONFIG_SPL_I2C_SUPPORT=y
++CONFIG_SCSI_AHCI=y
++CONFIG_RGMII=y
++CONFIG_SUN8I_EMAC=y
++CONFIG_AXP_DLDO4_VOLT=2500
++CONFIG_AXP_ELDO3_VOLT=1200
++CONFIG_SCSI=y
++CONFIG_USB_EHCI_HCD=y
++CONFIG_USB_OHCI_HCD=y
+-- 
+2.30.2
+
