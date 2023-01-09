@@ -11,7 +11,7 @@
 
 require jailhouse.inc
 
-SRCREV = "next"
+SRCREV = "kurt-dev_T3"
 PV = "0.9999-next"
 
 EXTRA_JAILHOUSE_CONFIGS_amd64 += " \
