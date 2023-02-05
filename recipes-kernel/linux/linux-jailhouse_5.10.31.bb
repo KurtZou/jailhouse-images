@@ -12,4 +12,4 @@
 require recipes-kernel/linux/linux-jailhouse_5.10.inc
 
 #SRC_URI[sha256sum] = "73ea481798bffb0378c7eba6d10f7d009c0d6dc6937d3760248c2cc143d8b70b"
-SRCREV = "kurt-dev-T3"
+SRCREV = "${AUTOREV}"

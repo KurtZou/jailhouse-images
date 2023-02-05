@@ -11,7 +11,7 @@
 
 require jailhouse.inc
 
-SRCREV = "kurt-dev_T3"
+SRCREV = "${AUTOREV}"
 PV = "0.9999-next"
 
 EXTRA_JAILHOUSE_CONFIGS_amd64 += " \
