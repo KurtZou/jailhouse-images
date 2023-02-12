@@ -25,22 +25,23 @@ EXTRA_JAILHOUSE_CONFIGS_amd64 = " \
     "
 
 SRC_URI = " \
-    git://github.com/KurtZou/jailhouse;protocol=https;branch=kurt-dev-PURETEST \
     file://debian/ \
+    file://jailhouse/  \
     ${@ " ".join(["file://" + cfg for cfg in d.getVar('EXTRA_JAILHOUSE_CONFIGS').split()]) } \
     "
 
 TEMPLATE_FILES = "debian/control.tmpl"
 TEMPLATE_VARS += "KERNEL_NAME"
 
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/code"
 
 inherit dpkg
 
 DEPENDS = "linux-image-${KERNEL_NAME}"
 
 do_prepare_build() {
-    cp -r ${WORKDIR}/debian ${S}/
+    mkdir -p ${S}	
+    cp -r ${WORKDIR}/jailhouse/* ${WORKDIR}/debian/ ${S}/
     deb_add_changelog
     if [ "${DISTRO_ARCH}" != "amd64" ]; then
         # Install device trees only on non-x86 archs as they only exist there
