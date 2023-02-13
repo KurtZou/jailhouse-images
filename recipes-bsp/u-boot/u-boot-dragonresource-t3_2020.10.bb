@@ -11,7 +11,8 @@
 
 require u-boot-${PV}.inc
 
-SRC_URI += "file://0001-adding-d-t3-defconfig.patch"
+#SRC_URI += "file://0001-adding-d-t3-defconfig.patch"
+SRCREV = "${AUTOREV}"
 SRC_URI += "file://dragonresource-t3-rules"
 
 U_BOOT_CONFIG = "dragonresource-t3_defconfig"
@@ -20,5 +21,6 @@ U_BOOT_BIN = "u-boot-sunxi-with-spl.bin"
 DEBIAN_BUILD_DEPENDS += ", libssl-dev, swig:native, python3-dev:native"
 
 do_prepare_build_append() {
+    mkdir -p ${S}/debian
     cp ${WORKDIR}/dragonresource-t3-rules ${S}/debian/rules
 }
